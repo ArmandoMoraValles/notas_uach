@@ -105,8 +105,10 @@ class NotaController extends Controller
      * @param  \App\Models\Nota  $nota
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Nota $nota)
+    public function destroy($id)
     {
-        //
+        $nota =  Nota::findOrFail($id);
+        $nota->delete();
+        return redirect()->route('noticias.index');
     }
 }
