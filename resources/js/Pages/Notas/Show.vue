@@ -2,23 +2,22 @@
     <app-layout title="Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Listar  noticias
+                Ver noticia
             </h2>
         </template>
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    
-                    <table>
-                        <p>HOLA SOY UN MENSAJE DE PRUEBA</p>
-                        <tr v-for="nota in notas" :key="nota.id">
-                            <td>
-                                {{nota.titulo}}
-                            </td>
-                        </tr>
-                        <p>HOLA SOY UN MENSAJE DE PRUEBA</p>
-                    </table>
+
+                    <p>Titulo</p>
+
+                    <p>{{ nota.titulo }}</p>
+
+                    <p>Contenido</p>
+
+                     <p>{{ nota.contenido }}</p>
+
 
                 </div>
             </div>
@@ -34,7 +33,7 @@
             AppLayout,
         },
         props: {
-            notas: Array,
+            nota: Object,
         }
     })
 </script>
