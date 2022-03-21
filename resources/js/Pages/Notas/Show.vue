@@ -9,7 +9,10 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-
+                    <inertia-link :href="route('noticias.edit', nota.id)">
+                        Editar
+                    </inertia-link>
+                    <hr>
                     <p>Titulo</p>
 
                     <p>{{ nota.titulo }}</p>
