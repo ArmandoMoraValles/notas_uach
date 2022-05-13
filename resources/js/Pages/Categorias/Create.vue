@@ -15,23 +15,19 @@
                             <div class="px-4 py-5 bg-white sm:p-6">
 
                                     <label class="block font-medium text-sm text-gray-700">
-                                        Título
+                                        Nombre de la categoria
                                     </label>
 
-                                    <textarea 
-                                        class="form-input w-full rounded-md shadow-sm"
-                                        v-model="form.titulo"
-                                    ></textarea>
+                                        <input type="text"  v-model="form.category_name" class="form-input w-full rounded-md shadow-sm">
 
                                     <label class="block font-medium text-sm text-gray-700">
-                                        Contenido
+                                        Estatus
                                     </label>
 
-                                    <textarea 
-                                        class="form-input w-full rounded-md shadow-sm"
-                                        v-model="form.contenido"
-                                        rows="8"
-                                    ></textarea>
+                                        <select v-model="form.category_status" class="form-input w-full rounded-md shadow-sm">
+                                            <option value=1>Enabled</option>
+                                            <option value=0>Disabled</option>
+                                        </select>
                             
                                     <button 
                                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
@@ -62,15 +58,15 @@
         data () {
             return {
                 form: {
-                    titulo: '',
-                    contenido: ''
+                    category_name: '',
+                    category_status: ''
                 }
             }
         },
         methods: {
             enviar() {
                 
-                this.$inertia.post(this.route('noticias.store'), this.form)
+                this.$inertia.post(this.route('categorias.store'), this.form)
             }
         }
     })
